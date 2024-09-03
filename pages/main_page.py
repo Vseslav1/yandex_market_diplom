@@ -1,3 +1,4 @@
+import time
 
 from pages.base_page import BasePage
 from helpers.url import BASE_URL
@@ -37,3 +38,14 @@ class MainPage(BasePage, MarketYandexLocators):
         self.click(self.ORDERS)
         self.assertions.assert_that_element_is_visible(self.ORDERS_PAGE)
 
+    def get_user_menu(self):
+        self.click(self.CONTAIN_MENU)
+
+
+    def assert_user_authorized(self):
+        self.assert_that_element_contains_text(self.USER_EMAIL,'vselslav-test.1@yandex.by')
+
+
+    def assert_go_tomain_page(self):
+        self.assertions.assert_that_element_is_visible(self.LOGO)
+        self.save_screenshot('assert_vhod.png')
