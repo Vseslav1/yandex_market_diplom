@@ -1,9 +1,8 @@
 from pages.base_page import BasePage
-from locators.locators import MarketYandexLocators
 from locators.headers_locators import HeadersLocators
 
 
-class HeaderElement(BasePage, MarketYandexLocators, HeadersLocators):
+class HeaderElement(BasePage, HeadersLocators):
     def basket_open(self):
         self.click(self.BASKET)
 
@@ -14,7 +13,7 @@ class HeaderElement(BasePage, MarketYandexLocators, HeadersLocators):
 
 
     def orders_open(self):
-        self.click (self.ORDERS)
+        self.click(self.ORDERS)
 
 
 

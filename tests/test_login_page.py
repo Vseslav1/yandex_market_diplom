@@ -1,5 +1,4 @@
 import time
-
 import pytest
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
@@ -35,7 +34,7 @@ def test_create_id(driver):
     header_element = HeaderElement(driver)
     header_element.open_login()
 
-    login_page =LoginPage(driver)
+    login_page = LoginPage(driver)
     login_page.create_id()
     login_page.create_id_for_me()
     login_page.assert_create_id_for_me()
@@ -52,10 +51,10 @@ def test_input_login_form(driver):
     header_element = HeaderElement(driver)
     header_element.open_login()
 
-    login_page =LoginPage(driver)
+    login_page = LoginPage(driver)
     login_page.login_input()
     login_page.password_input()
-    main_page.assert_go_tomain_page()
+    main_page.assert_go_to_main_page()
 
 
 
@@ -106,12 +105,3 @@ def test_forgot_password(driver):
     login_page = LoginPage(driver)
     login_page.login_input()
     login_page.assert_forgot_pasword()
-
-
-
-
-
-
-
-
-
