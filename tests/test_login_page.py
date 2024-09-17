@@ -104,4 +104,4 @@ def test_forgot_password(driver):
 
     login_page = LoginPage(driver)
     login_page.login_input()
-    login_page.assert_forgot_pasword()
+    login_page.assert_forgot_password()

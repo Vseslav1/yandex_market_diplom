@@ -3,9 +3,13 @@ import time
 from pages.base_page import BasePage
 from helpers.url import BASE_URL
 from locators.headers_locators import HeadersLocators
+from locators.main_page_locators import MainPageLocators
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
-class MainPage(BasePage, HeadersLocators):
+
+class MainPage(BasePage, HeadersLocators, MainPageLocators):
 
 
     def __init__(self, driver):
@@ -30,10 +34,13 @@ class MainPage(BasePage, HeadersLocators):
         self.assertions.assert_that_element_is_visible(self.SPLIT)
         self.assertions.assert_that_element_is_visible(self.FAVORITE_CATEGORY)
         self.assertions.assert_that_element_is_visible(self.CLOTHE)
-        self.assertions.assert_that_element_is_visible(self.HOME)
+        self.assertions.assert_that_element_is_visible(self.HOME_PRODUCT)
         self.assertions.assert_that_element_is_visible(self.CHILD)
-        self.assertions.assert_that_element_is_visible(self.MARKET_FOR_BISINESS)
+        self.assertions.assert_that_element_is_visible(self.MARKET_FOR_BUSINESS)
         self.assertions.assert_that_element_is_visible(self.SELL_ON_THE_MARKET)
+        self.assertions.assert_that_element_is_visible(self.BEAUTY)
+        self.assertions.assert_that_element_is_visible(self.ELECTRONICS)
+        self.assertions.assert_that_element_is_visible(self.IKEA)
 
 
 
@@ -50,20 +57,31 @@ class MainPage(BasePage, HeadersLocators):
         self.assertions.assert_that_element_is_clickable(self.SPLIT)
         self.assertions.assert_that_element_is_clickable(self.FAVORITE_CATEGORY)
         self.assertions.assert_that_element_is_clickable(self.CLOTHE)
-        self.assertions.assert_that_element_is_clickable(self.HOME)
+        self.assertions.assert_that_element_is_clickable(self.HOME_PRODUCT)
         self.assertions.assert_that_element_is_clickable(self.CHILD)
-        self.assertions.assert_that_element_is_clickable(self.MARKET_FOR_BISINESS)
+        self.assertions.assert_that_element_is_clickable(self.MARKET_FOR_BUSINESS)
         self.assertions.assert_that_element_is_clickable(self.SELL_ON_THE_MARKET)
+        self.assertions.assert_that_element_is_clickable(self.BEAUTY)
+        self.assertions.assert_that_element_is_clickable(self.ELECTRONICS)
+        self.assertions.assert_that_element_is_clickable(self.IKEA)
 
 
     def get_user_menu(self):
-        self.click(self.CONTAIN_MENU)
+        self.click(self.USER_MENU)
+        self.save_screenshot('user.png')
 
 
-    def assert_user_authorized(self):
-        self.assert_that_element_contains_text(self.USER_EMAIL,'vselslav-test.1@yandex.by')
+    def assert_open_catalog(self):
+        assert self.get_element(self.CATALOG_PAGE)
+        self.save_screenshot('assert_catalog_visible.png')
 
 
-    def assert_go_to_main_page(self):
-        self.assertions.assert_that_element_is_visible(self.LOGO)
-        self.save_screenshot('assert_vhod.png')
+    def search(self):
+        self.fill(self.SEARCH_INPUT, 'макбук эйр м1')
+        self.click(self.SEARCH_BUTTON)
+
+
+    def assert_search(self):
+        self.assertions.assert_that_element_is_visible (self.PAGE_SEARCH)
+
+        self.save_screenshot ('assert_search.png')

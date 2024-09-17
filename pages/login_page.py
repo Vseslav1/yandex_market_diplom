@@ -60,7 +60,7 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
 
 
     def button_more(self):
-        self.click (self.BUTTON_MORE)
+        self.click(self.BUTTON_MORE)
 
 
     def assert_more_login_element(self):
@@ -84,7 +84,7 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
                                                'Неверный пароль')
 
 
-    def assert_forgot_pasword(self):
+    def assert_forgot_password(self):
         self.assertions.assert_that_element_is_clickable(self.FORGOT_PASSWORD)
 
 

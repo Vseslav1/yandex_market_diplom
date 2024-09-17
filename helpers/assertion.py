@@ -33,9 +33,10 @@ class Assertions:
         element = self.driver.find_element(*selector)
         assert element.is_selected() == False
 
+
     def assert_that_element_is_clickable(self, selector):
         try:
-            element = WebDriverWait (self.driver, 10).until(
+            element = WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(selector))
             assert element is not None, f"Element with selector {selector} is not found."
         except TimeoutException:
