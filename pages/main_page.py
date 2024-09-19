@@ -4,8 +4,7 @@ from pages.base_page import BasePage
 from helpers.url import BASE_URL
 from locators.headers_locators import HeadersLocators
 from locators.main_page_locators import MainPageLocators
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 
 
 
@@ -66,22 +65,19 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators):
         self.assertions.assert_that_element_is_clickable(self.IKEA)
 
 
-    def get_user_menu(self):
-        self.click(self.USER_MENU)
-        self.save_screenshot('user.png')
-
 
     def assert_open_catalog(self):
         assert self.get_element(self.CATALOG_PAGE)
-        self.save_screenshot('assert_catalog_visible.png')
 
 
     def search(self):
-        self.fill(self.SEARCH_INPUT, 'макбук эйр м1')
+        self.fill(self.SEARCH_INPUT, '13.3" Ноутбук Apple MacBook Air 13 Late 2020 2560x1600, Apple M1 3.2 ГГц, RAM 8 ГБ, DDR4, SSD 256 ГБ, Apple graphics 7-core, macOS, серый космос')
         self.click(self.SEARCH_BUTTON)
 
 
     def assert_search(self):
-        self.assertions.assert_that_element_is_visible (self.PAGE_SEARCH)
+        self.assertions.assert_that_element_is_visible(self.PAGE_SEARCH)
 
-        self.save_screenshot ('assert_search.png')
+
+    def assert_go_to_main_page(self):
+        self.assertions.assert_that_element_is_visible(self.LOGO)

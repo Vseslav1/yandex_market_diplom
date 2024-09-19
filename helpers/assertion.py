@@ -41,3 +41,17 @@ class Assertions:
             assert element is not None, f"Element with selector {selector} is not found."
         except TimeoutException:
             raise AssertionError(f"Element with selector {selector} is not clickable after 10 seconds.")
+
+
+    def assert_that_elements_are_clickable(self, selector):
+        try:
+
+            elements = WebDriverWait(self.driver, 10).until (
+                EC.presence_of_all_elements_located(selector)
+            )
+            assert elements, f"Elements with selector {selector} are not found."
+            for element in elements:
+                WebDriverWait(self.driver, 10).until(
+                    EC.element_to_be_clickable(element))
+        except TimeoutException:
+            raise AssertionError(f"Elements with selector {selector} are not clickable after 10 seconds.")

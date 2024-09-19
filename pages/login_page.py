@@ -14,18 +14,25 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
 
     def login_input(self):
         self.fill(self.NAME, 'vselslav-test.1')
+
+
+    def click_login(self):
         self.click(self.SING_IN)
 
 
     def password_input(self):
         self.fill(self.PASSWORD_INPUT, 'qap18test')
+
+    def click_password(self):
         self.click(self.BUTTON_PASSWORD)
 
 
-
-    def assert_login_by_phone(self):
+    def login_by_phone(self):
         self.click(self.LOGIN_BY_PHONE_NUMBER)
         self.fill(self.PHONE_INPUT, '447955017')
+
+
+    def assert_login_by_phone(self):
         self.assertions.assert_that_element_is_clickable(self.SING_IN_BY_PHONE)
 
 
@@ -72,6 +79,9 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
     def input_incorrect_login(self):
         self.fill(self.NAME, 'Egaedszgaezh')
         self.click(self.SING_IN)
+
+
+    def assert_login_incorrect(self):
         self.assert_that_element_contains_text(self.TEXT_BY_INCORRECT_LOGIN,
                                         'Нет такого аккаунта. Проверьте логин или войдите по телефону')
 
@@ -80,7 +90,10 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
         self.click(self.PASSWORD_INPUT)
         self.fill(self.PASSWORD_INPUT, '111111')
         self.click(self.BUTTON_PASSWORD)
-        self.assert_that_element_contains_text (self.TEXT_BY_INCORRECT_PASSWORD,
+
+
+    def assert_input_incorrect_password(self):
+        self.assert_that_element_contains_text(self.TEXT_BY_INCORRECT_PASSWORD,
                                                'Неверный пароль')
 
 

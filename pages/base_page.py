@@ -16,21 +16,19 @@ class BasePage(Assertions):
         self.assertions = Assertions(driver)
 
     def click(self, selector):
-        element = self.driver.find_element(*selector)
-        element.click()
-
-    def click_js(self,selector):
-        element = self.driver.find_element (*selector)
-        element.click()
-        self.driver.execute_script ("arguments[0].click();", element)
-        WebDriverWait (self.driver, 10).until (EC.visibility_of_element_located (selector))
+        try:
+            element = WebDriverWait (self.driver, 10).until(EC.element_to_be_clickable(selector))
+            element.click()
+        except Exception as e:
+            print(f"Ошибка: {e}")
 
 
-    def click_element(self, selector):
-        element = self.driver.find_element(*selector)
-        element.click()
-        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(selector))
-        self.driver.execute_script("arguments[0].setAttribute('aria-expanded', 'true');", element)
+    def click_js(self, selector):
+        try:
+            element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(selector))
+            self.driver.execute_script("arguments[0].click();", element)
+        except Exception as e:
+            print(f"Ошибка: {e}")
 
 
     def click_mouse(self, selector):
@@ -46,6 +44,7 @@ class BasePage(Assertions):
 
     def save_screenshot(self, name):
         self.driver.save_screenshot(name)
+
 
     def open_page(self, url):
         self.driver.get(url)

@@ -1,4 +1,4 @@
-import time
+
 import pytest
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
@@ -24,6 +24,7 @@ def test_sing_in_by_phone(driver):
     header_element.open_login()
 
     login_page = LoginPage(driver)
+    login_page.login_by_phone()
     login_page.assert_login_by_phone()
 
 
@@ -53,7 +54,9 @@ def test_input_login_form(driver):
 
     login_page = LoginPage(driver)
     login_page.login_input()
+    login_page.click_login()
     login_page.password_input()
+    login_page.click_password()
     main_page.assert_go_to_main_page()
 
 
@@ -80,6 +83,7 @@ def test_input_incorrect_login(driver):
 
     login_page = LoginPage(driver)
     login_page.input_incorrect_login()
+    login_page.assert_login_incorrect()
 
 
 def test_input_incorrect_password(driver):
@@ -92,6 +96,7 @@ def test_input_incorrect_password(driver):
     login_page = LoginPage(driver)
     login_page.login_input()
     login_page.input_incorrect_password()
+    login_page.assert_input_incorrect_password()
 
 
 
