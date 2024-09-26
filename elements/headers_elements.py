@@ -11,8 +11,8 @@ class HeaderElement(BasePage, HeadersLocators):
         self.click(self.BASKET)
 
 
-    def open_wish_list(self):
-        self.click(self.WISH_LIST)
+    def open_favorites(self):
+        self.click(self.FAVORITES)
 
 
     def orders_open(self):

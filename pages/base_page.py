@@ -15,12 +15,11 @@ class BasePage(Assertions):
 
         self.assertions = Assertions(driver)
 
-    def click(self, selector):
-        try:
-            element = WebDriverWait (self.driver, 10).until(EC.element_to_be_clickable(selector))
-            element.click()
-        except Exception as e:
-            print(f"Ошибка: {e}")
+    def click(self, selector, force=False):
+        element = self.driver.find_element (*selector)
+        if force:
+            self.driver.execute_script ("arguments[0].click();", element)
+        element.click ()
 
 
     def click_js(self, selector):
@@ -78,3 +77,18 @@ class BasePage(Assertions):
     def select_by_value(self, selector, value):
         select = Select(self.get_element(selector))
         select.select_by_value(value)
+
+
+    def scroll(self, selector):
+        try:
+            # Ожидание появления элемента
+            element = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located(selector))
+
+            # Прокрутка к элементу
+            self.driver.execute_script ("arguments[0].scrollIntoView();", element)
+
+            # Дополнительная прокрутка, если необходимо
+            self.driver.execute_script ("window.scrollBy(0, -100);")
+        except Exception as e:
+            print (f"Произошла ошибка скрола : {e}")

@@ -19,6 +19,8 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators):
     def open(self):
         self.driver.get(BASE_URL)
 
+    def assert_go_to_main_page(self):
+        self.assertions.assert_that_element_is_visible(self.LOGO)
 
     def assert_header_element_visible(self):
         self.assertions.assert_that_element_is_visible(self.BUTTON_LOGIN)
@@ -65,19 +67,11 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators):
         self.assertions.assert_that_element_is_clickable(self.IKEA)
 
 
-
-    def assert_open_catalog(self):
-        assert self.get_element(self.CATALOG_PAGE)
-
-
     def search(self):
-        self.fill(self.SEARCH_INPUT, '13.3" Ноутбук Apple MacBook Air 13 Late 2020 2560x1600, Apple M1 3.2 ГГц, RAM 8 ГБ, DDR4, SSD 256 ГБ, Apple graphics 7-core, macOS, серый космос')
+        self.fill(self.SEARCH_INPUT, 'макбук эйр м1')
         self.click(self.SEARCH_BUTTON)
 
 
-    def assert_search(self):
-        self.assertions.assert_that_element_is_visible(self.PAGE_SEARCH)
 
 
-    def assert_go_to_main_page(self):
-        self.assertions.assert_that_element_is_visible(self.LOGO)
+

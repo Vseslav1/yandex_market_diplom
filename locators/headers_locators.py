@@ -9,7 +9,7 @@ class HeadersLocators:
     SEARCH_BUTTON = (By.CSS_SELECTOR, '[data-auto="search-button"]')
     PLUS = (By.CSS_SELECTOR, '[data-zone-name="yaPlusBadge"]')
     ORDERS = (By.CSS_SELECTOR, '[data-apiary-widget-id="/content/header/header/ordersButton"]')
-    WISH_LIST = (By.CSS_SELECTOR, '[data-apiary-widget-id="/content/header/header/wishlistButton"]')
+    FAVORITES = (By.CSS_SELECTOR, '[class="_11Nqc _3dlQc _2q1BP"]')
     BASKET = (By.CSS_SELECTOR, '[data-auto="header-cart"]')
     REGION = (By.CSS_SELECTOR, '[data-zone-name="region-select"]')
     CLICK_DELIVERY = (By.CSS_SELECTOR, '[data-zone-name="thematic-entrypoint"]')

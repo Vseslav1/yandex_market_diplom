@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginLocators:
-    LOGIN_FORM = (By.XPATH, '//*[@id="root"]/div/div[2]/div[2]/div/div/div[1]')
+    LOGIN_FORM = (By.CSS_SELECTOR, '[class="passp-auth-content"]')
     LOGIN_BY_PHONE_NUMBER = (By.XPATH,
         '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div[3]/div/div/div/div/form/div/div[2]/div[1]/div[2]/button')
     PHONE_INPUT = (By.XPATH, '//*[@id="passp-field-phone"]')
