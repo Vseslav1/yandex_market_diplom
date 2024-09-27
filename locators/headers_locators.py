@@ -1,26 +1,29 @@
 from selenium.webdriver.common.by import By
 
 
+
 class HeadersLocators:
-    BUTTON_LOGIN = (By.CSS_SELECTOR, '[data-zone-name="headerLoginButton"]')
     LOGO = (By.CSS_SELECTOR, '[data-auto="logoMarketLink"]')
-    CATALOG = (By.CSS_SELECTOR, '[class="_30-fz button-focus-ring Hkr1q _1pHod _2rdh3 _3rbM-"]')
-    SEARCH = (By.CSS_SELECTOR, '[data-zone-name="search_block"]')
+
+    CATALOG = (By.XPATH, '//div[@class="cia-vs cia-cs"]')
+
     SEARCH_BUTTON = (By.CSS_SELECTOR, '[data-auto="search-button"]')
+    SEARCH_INPUT = (By.CSS_SELECTOR, '[data-auto="search-input"]')
+
     PLUS = (By.CSS_SELECTOR, '[data-zone-name="yaPlusBadge"]')
-    ORDERS = (By.CSS_SELECTOR, '[data-apiary-widget-id="/content/header/header/ordersButton"]')
+
+    ORDERS = (By.XPATH, '//div[@data-baobab-name="orders"]')
+
     FAVORITES = (By.CSS_SELECTOR, '[class="_11Nqc _3dlQc _2q1BP"]')
+
+    BUTTON_LOGIN = (By.CSS_SELECTOR, '[data-zone-name="headerLoginButton"]')
+
     BASKET = (By.CSS_SELECTOR, '[data-auto="header-cart"]')
-    REGION = (By.CSS_SELECTOR, '[data-zone-name="region-select"]')
-    CLICK_DELIVERY = (By.CSS_SELECTOR, '[data-zone-name="thematic-entrypoint"]')
-    SPLIT = (By.CSS_SELECTOR, '[data-zone-name="category-link"]')
-    FAVORITE_CATEGORY = (By.CSS_SELECTOR, '[data-zone-name="tab-with-action"]')
-    CLOTHE = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[4]')
-    HOME_PRODUCT = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[5]')
-    CHILD = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[6]')
-    BEAUTY = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[7]/div')
+
+    DELIVERY = (By.XPATH, '//span[@class="_1_C0_ _1n-yE _33-CL _2BojB _22iQ6"]')
+
+    TOP_MENY = (By.XPATH, '//li[@role="tab"]')
+
     MARKET_FOR_BUSINESS = (By.CSS_SELECTOR, '[data-zone-name="market-for-business"]')
-    SELL_ON_THE_MARKET = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[2]/li[2]/div')
-    ELECTRONICS = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[8]')
-    IKEA = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[9]/div')
-    PRODUCT = (By.XPATH, '/html/body/div[1]/div/div[1]/div[3]/noindex/div/div/div/nav/div/ul[1]/li[10]/div')
+
+    PRODUCT_ONE = (By.XPATH, '//div[@data-apiary-widget-name="@marketfront/SerpEntity"]')

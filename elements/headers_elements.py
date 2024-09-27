@@ -1,63 +1,73 @@
 import time
-
 from pages.base_page import BasePage
 from locators.headers_locators import HeadersLocators
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class HeaderElement(BasePage, HeadersLocators):
-    def basket_open(self):
-        self.click(self.BASKET)
 
+    def click_logo(self):
+        self.click(self.LOGO)
 
-    def open_favorites(self):
-        self.click(self.FAVORITES)
+    def open_catalog(self):
+        self.click_mouse(self.CATALOG)
 
+    def search_input(self, text):
+        self.fill(self.SEARCH_INPUT, text)
+
+    def button_search(self):
+        self.click(self.SEARCH_BUTTON)
+
+    def open_plus(self):
+        self.click(self.PLUS)
 
     def orders_open(self):
         self.click(self.ORDERS)
 
+    def open_favorites(self):
+        self.click(self.FAVORITES)
+
+    def basket_open(self):
+        self.click(self.BASKET)
 
     def open_login(self):
         self.click(self.BUTTON_LOGIN)
 
+    def open_delivery(self):
+        self.click_mouse(self.DELIVERY)
 
-    def open_catalog(self):
-        self.click_mouse(self.CATALOG)
-        time.sleep(5)
-
-
-    def open_region(self):
-        self.click(self.REGION)
-
-
-    def open_delivery_for_click(self):
-        self.click(self.CLICK_DELIVERY)
-
+    def open_thematic(self):
+        self.click_for_index(self.TOP_MENY, 0)
 
     def open_split(self):
-        self.click(self.SPLIT)
-
+        self.click_for_index(self.TOP_MENY, 1)
 
     def open_favorite_category(self):
-        self.click(self.FAVORITE_CATEGORY)
-
-
-    def open_home_product(self):
-        self.click(self.HOME_PRODUCT)
+        self.click_for_index(self.TOP_MENY, 2)
 
     def open_cloth(self):
-        self.click(self.CLOTHE)
+        self.click_for_index(self.TOP_MENY, 3)
 
+    def open_home_product(self):
+        self.click_for_index(self.TOP_MENY, 4)
 
     def open_child(self):
-        self.click(self.CHILD)
+        self.click_for_index(self.TOP_MENY, 5)
 
+    def open_beauty(self):
+        self.click_for_index(self.TOP_MENY, 6)
+
+    def open_electronic(self):
+        self.click_for_index(self.TOP_MENY, 7)
+
+    def open_ikea(self):
+        self.click_for_index(self.TOP_MENY, 8)
+
+    def open_food_product(self):
+        self.click_for_index(self.TOP_MENY, 9)
 
     def open_business(self):
         self.click(self.MARKET_FOR_BUSINESS)
 
-
     def open_sell_on_the_market(self):
-        self.click(self.SELL_ON_THE_MARKET)
+        self.click_for_index(self.TOP_MENY, 26)
