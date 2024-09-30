@@ -17,3 +17,5 @@ class MainPageLocators:
     GRID = (By.CSS_SELECTOR, '[data-baobab-name="viewtypeGrid"]')
 
     CATALOG_WIDGET = (By.CSS_SELECTOR, '[class="_12ret _1Fik6"]')
+
+    IKEA_TEXT = (By.XPATH, '//span[@data-auto="chip-name"]')

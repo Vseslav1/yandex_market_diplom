@@ -99,8 +99,8 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators, URL):
     def assert_electronic_page_open(self):
         self.assertions.assert_that_page_open(self.ELECTRONIC_PAGE)
 
-    def assert_ikea_page_open(self):
-        self.assertions.assert_that_page_open(self.IKEA_PAGE)
+    def assert_ikea_open(self):
+        self.assertions.assert_that_element_contains_text(self.IKEA_TEXT, 'ИКЕА')
 
     def assert_food_page_open(self):
         self.assertions.assert_that_page_open(self.FOOD_PAGE)

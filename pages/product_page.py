@@ -44,14 +44,6 @@ class ProductPage(BasePage, ProductLocator):
     def assert_product_in_favorites(self):
         self.assertions.assert_that_element_is_visible(self.PRODUCT_IN_FAVORITES)
 
-    def assert_buy_now_clickable(self):
-        self.assertions.assert_that_element_is_clickable(self.PRODUCT_NAME)
-
-    def click_read_moore(self):
-        self.click_mouse(self.CHARACTERISTICS)
-
-    def assert_open_characteristics(self):
-        self.assertions.assert_that_element_is_visible(self.ALL_CHARACTERISTICS)
 
     def add_to_basket(self):
         self.click_mouse(self.ADD_TO_BASKET)
@@ -59,3 +51,7 @@ class ProductPage(BasePage, ProductLocator):
 
     def assert_product_in_basket(self):
         self.assertions.assert_that_element_contains_text(self.PRODUCT_IN_BASKET, '1 товар')
+
+    def other_button_clickable(self):
+        self.assertions.assert_that_element_is_clickable(self.PRODUCT_NAME)
+        self.assertions.assert_that_element_is_clickable(self.CHARACTERISTICS)

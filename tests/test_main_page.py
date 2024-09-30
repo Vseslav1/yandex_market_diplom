@@ -194,7 +194,7 @@ def test_open_ikea_page(driver):
     header_element = HeaderElement(driver)
     header_element.open_ikea()
 
-    main_page.assert_ikea_page_open()
+    main_page.assert_ikea_open()
 
 
 def test_open_food_page(driver):

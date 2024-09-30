@@ -13,6 +13,7 @@ def pytest_addoption(parser):
         "--chrome", action="store_true", default=False, help="Run tests in Chrome"
     )
 
+
 @pytest.fixture
 def driver(request):
     if request.config.getoption("--chrome"):
