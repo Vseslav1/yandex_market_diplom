@@ -14,9 +14,21 @@ class BasePage(Assertions):
 
         self.assertions = Assertions(driver)
 
-    def click(self, selector):
+    def open_page(self, url):
+        self.driver.get(url)
+
+
+    def click(self, selector, force=False):
         element = self.driver.find_element(*selector)
+        if force:
+            self.driver.execute_script("arguments[0].click();", element)
         element.click()
+
+
+    def click_mouse(self, selector):
+        element = self.get_element(selector)
+        actions = ActionChains(self.driver)
+        actions.click(element).perform()
 
 
     def fill(self, selector, text):
@@ -27,35 +39,28 @@ class BasePage(Assertions):
     def save_screenshot(self, name):
         self.driver.save_screenshot(name)
 
-    def open_page(self, url):
-        self.driver.get(url)
 
-
-    def add_cookie(self, name, value):
-        cookie = {'name': name, 'value': value}
-        self.driver.add_cookie (cookie)
-
-
-    def get_text(self, selector):
-        element = self.driver.find_element(*selector)
-        return element.text
-
-
-    def get_element(self, locator):
-        element = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(locator))
+    def get_element(self, selector):
+        element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(selector))
         return element
 
 
-    def select_by_index(self, selector, index):
-        select = Select(self.get_element(selector))
-        select.select_by_index(index)
+    def scroll(self, selector):
+        try:
+            element = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located(selector))
+            self.driver.execute_script("arguments[0].scrollIntoView();", element)
+            self.driver.execute_script("window.scrollBy(0, -100);")
+        except Exception as e:
+            print(f"Произошла ошибка: {e}")
 
 
-    def select_by_visible_text(self, selector, text):
-        select = Select(self.get_element(selector))
-        select.select_by_visible_text(text)
-
-
-    def select_by_value(self, selector, value):
-        select = Select(self.get_element(selector))
-        select.select_by_value(value)
+    def click_for_index(self, selector, index):
+        tabs = self.driver.find_elements(*selector)
+        if 0 <= index < len(tabs):
+            try:
+                tabs[index].click()
+            except Exception as e:
+                print(f"Could not click on tab {index + 1}: {str(e)}")
+        else:
+            print(f"Index {index + 1} is out of range. There are {len(tabs)} tabs.")
