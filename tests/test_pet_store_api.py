@@ -1,6 +1,8 @@
+import allure
 from services.pet_store_services import PetStoreServices
 
 
+@allure.title('Test place an order')
 def test_add_place_an_order():
     pet_store = PetStoreServices()
 
@@ -16,6 +18,7 @@ def test_add_place_an_order():
     assert response['quantity'] == quantity
 
 
+@allure.title('Test find by id')
 def test_find_by_id():
     pet_store = PetStoreServices()
 
@@ -25,6 +28,7 @@ def test_find_by_id():
     assert response['id'] == 777
 
 
+@allure.title('Test delete pet')
 def test_delete_pet():
     pet_store = PetStoreServices()
 

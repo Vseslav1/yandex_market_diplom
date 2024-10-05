@@ -1,11 +1,11 @@
-import time
+import allure
 from pages.base_page import BasePage
 from locators.headers_locators import HeadersLocators
-from selenium.webdriver.support.ui import WebDriverWait
 
 
 class HeaderElement(BasePage, HeadersLocators):
 
+    @allure.step('Clicklogo')
     def click_logo(self):
         self.click(self.LOGO)
 

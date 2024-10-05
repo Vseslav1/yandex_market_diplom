@@ -1,7 +1,8 @@
+import allure
 from services.pet_service import PetService
 
 
-
+@allure.title('Test add pet')
 def test_add_pet():
     pet = PetService()
 
@@ -14,6 +15,7 @@ def test_add_pet():
     assert response['name'] == 'Sharic'
 
 
+@allure.title('Test update pet')
 def test_update_pet():
     pet = PetService()
 
@@ -26,6 +28,7 @@ def test_update_pet():
     assert response['status'] == 'sale'
 
 
+@allure.title('Test get pet')
 def test_get_pet():
     pet = PetService()
 
@@ -37,6 +40,7 @@ def test_get_pet():
     assert response['status'] == 'sale'
 
 
+@allure.title('Test delete pet')
 def test_delete_pet():
     pet = PetService()
 

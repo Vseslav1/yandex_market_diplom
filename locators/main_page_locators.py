@@ -3,10 +3,9 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators:
 
-    PAGE_SEARCH = (By.CSS_SELECTOR, '[data-auto="SerpList"]')
+    PAGE_SEARCH = (By.CSS_SELECTOR, '[data-zone-name="searchPage"]')
 
-    ALL_FILTERS = (By.XPATH, '//button[@class="_3CCE- _1Mcpo _2jQ3e _3ozc8"]')
-    ALL_FILTERS_PAGE = (By.CSS_SELECTOR, '[data-zone-name="all-filters-page"]')
+    FILTERS = (By.XPATH, '//div[@data-zone-name="SearchFilters"]')
 
     POPULAR = (By.CSS_SELECTOR, '[data-autotest-id="dpop"]')
     CHEAPER = (By.CSS_SELECTOR, '[data-autotest-id="aprice"]')

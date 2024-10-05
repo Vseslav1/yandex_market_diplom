@@ -18,7 +18,8 @@ def pytest_addoption(parser):
 def driver(request):
     if request.config.getoption("--chrome"):
         options = ChromeOptions()
-        options.add_argument("--disable-search-engine-choice-screen")
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
     else:

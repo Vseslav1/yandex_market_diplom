@@ -1,9 +1,10 @@
-
+import allure
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from elements.headers_elements import HeaderElement
 
 
+@allure.title('Login form visible')
 def test_login_form_visible(driver):
     main_page = MainPage(driver)
     main_page.open()
@@ -15,7 +16,8 @@ def test_login_form_visible(driver):
     login_page.assert_open_form_login()
 
 
-def test_sing_in_by_phone(driver):
+@allure.title('Form login by phone visible')
+def test_login_by_phone(driver):
     main_page = MainPage(driver)
     main_page.open()
 
@@ -27,7 +29,8 @@ def test_sing_in_by_phone(driver):
     login_page.assert_form_phone_login()
 
 
-def test_create_id(driver):
+@allure.title('Test open form create id')
+def test_open__form_create_id(driver):
     main_page = MainPage(driver)
     main_page.open()
 
@@ -44,7 +47,8 @@ def test_create_id(driver):
     login_page.assert_open_form_for_child()
 
 
-def test_input_login_form(driver):
+@allure.title('Test Authorization')
+def test_authorization(driver):
     main_page = MainPage(driver)
     main_page.open()
 
@@ -59,8 +63,8 @@ def test_input_login_form(driver):
     main_page.assert_go_to_main_page()
 
 
-
-def test_login_through_services(driver):
+@allure.title('Test using other services by login')
+def test_using_other_services_by_login(driver):
     main_page = MainPage(driver)
     main_page.open()
 
@@ -68,12 +72,13 @@ def test_login_through_services(driver):
     header_element.open_login()
 
     login_page = LoginPage(driver)
-    login_page.assert_login_through_services()
+    login_page.assert_login_using_other_service()
     login_page.button_more()
-    login_page.assert_login_through_element()
+    login_page.assert_login_using_other_elements_visible_and_clickable()
 
 
-def test_input_incorrect_login(driver):
+@allure.title('Test incorrect login')
+def test_entered_incorrect_login(driver):
     main_page = MainPage(driver)
     main_page.open()
 
@@ -83,9 +88,10 @@ def test_input_incorrect_login(driver):
     login_page = LoginPage(driver)
     login_page.login_input('Egaedszgaezh')
     login_page.click_login()
-    login_page.assert_login_incorrect()
+    login_page.assert_login_entered_incorrect()
 
 
+@allure.title('Test login not entered')
 def test_login_not_entered(driver):
     main_page = MainPage(driver)
     main_page.open()
@@ -98,7 +104,8 @@ def test_login_not_entered(driver):
     login_page.assert_login_not_entered()
 
 
-def test_input_incorrect_password(driver):
+@allure.title('Test incorrect password')
+def test_entered_incorrect_password(driver):
     main_page = MainPage(driver)
     main_page.open()
 
@@ -110,10 +117,10 @@ def test_input_incorrect_password(driver):
     login_page.click_login()
     login_page.password_input('111111')
     login_page.click_password()
-    login_page.assert_input_incorrect_password()
+    login_page.assert_entered_incorrect_password()
 
 
-
+@allure.title('Test forgot password')
 def test_forgot_password(driver):
     main_page = MainPage(driver)
     main_page.open()
@@ -127,6 +134,7 @@ def test_forgot_password(driver):
     login_page.assert_forgot_password()
 
 
+@allure.title('Test password not entered')
 def test_password_not_entered(driver):
     main_page = MainPage(driver)
     main_page.open()

@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 
-
 class HeadersLocators:
     LOGO = (By.CSS_SELECTOR, '[data-auto="logoMarketLink"]')
 
