@@ -4,7 +4,14 @@
 
 This project is designed to automate testing of the functionality of the Yandex.Market website using Selenium WebDriver and Python. The project includes a set of tests to test various operations on the site, such as searching for products, authorizing users, adding products to the cart
 .
+
 This project can be run on two browsers: Google Chrome and Mozilla Firefox
+
+The project also contains API tests for https://petstore.swagger.io/.
+
+Docker containerization has been completed. 
+
+All tests are structured with an Page Object Model pattern
 
 ## Tehnologies
 
