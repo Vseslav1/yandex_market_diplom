@@ -11,7 +11,7 @@ The project also contains API tests for https://petstore.swagger.io/.
 
 Docker containerization has been completed. 
 
-All tests are structured with an Page Object Model patern
+All tests are structured with an Page Object Model pattern
 
 ## Tehnologies
 
