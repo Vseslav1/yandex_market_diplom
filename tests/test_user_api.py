@@ -1,8 +1,10 @@
+import allure
 from services.user_services import UserServices
 
 
+@allure.title('Test add user')
 def test_add_user():
-    user_services = UserServices ()
+    user_services = UserServices()
 
     id_user = 444
     username = 'TeachMeSkill'
@@ -14,11 +16,12 @@ def test_add_user():
     user_status = 1
 
     status_code, response = user_services.create_user(id_user, username, first_name, last_name, email, password, phone,
-                                                       user_status)
+                                                      user_status)
 
     assert status_code == 200
 
 
+@allure.title('Test det user by user name')
 def test_get_user_by_user_name():
     user_services = UserServices()
 
@@ -35,6 +38,7 @@ def test_get_user_by_user_name():
     assert response['userStatus'] == 1
 
 
+@allure.title('Test login user')
 def test_login_user():
     user_services = UserServices()
 

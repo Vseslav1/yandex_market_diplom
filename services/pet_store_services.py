@@ -1,3 +1,4 @@
+import allure
 from services.base_service import BaseService
 
 
@@ -6,6 +7,7 @@ class PetStoreServices(BaseService):
         super().__init__()
         self.url = 'https://petstore.swagger.io/v2/store/order'
 
+    @allure.step('Add place an order')
     def add_place_an_order(self, id_order, id_pet, quantity):
         body = {
             "id": id_order,
@@ -18,11 +20,12 @@ class PetStoreServices(BaseService):
         url = self.url
         return self.post(url=url, body=body)
 
+    @allure.step('Get pet by id')
     def get_pet_by_id(self, id_pet):
         url = f'{self.url}/{id_pet}'
         return self.get(url=url)
 
+    @allure.step('Delete pet')
     def delete_pet(self, id_pet):
         url = f'{self.url}/{id_pet}'
         return self.delete(url=url)
-
