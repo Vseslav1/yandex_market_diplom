@@ -2,7 +2,7 @@ import allure
 from services.pet_store_services import PetStoreServices
 
 
-@allure.title('Test place an order')
+@allure.title('Place an order')
 def test_add_place_an_order():
     pet_store = PetStoreServices()
 
