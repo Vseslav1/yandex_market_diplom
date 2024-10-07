@@ -2,7 +2,7 @@ import allure
 from services.user_services import UserServices
 
 
-@allure.title('Test add user')
+@allure.title('Add user')
 def test_add_user():
     user_services = UserServices()
 
@@ -21,7 +21,7 @@ def test_add_user():
     assert status_code == 200
 
 
-@allure.title('Test det user by user name')
+@allure.title('Test get user by user name')
 def test_get_user_by_user_name():
     user_services = UserServices()
 

@@ -101,7 +101,6 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
 
     @allure.step('Assert forgot password')
     def assert_forgot_password(self):
-        self.get_element(self.FORGOT_PASSWORD)
         self.assertions.assert_that_element_is_clickable(self.FORGOT_PASSWORD)
 
     @allure.step('Assert password not entered')
