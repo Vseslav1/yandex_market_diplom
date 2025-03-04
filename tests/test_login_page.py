@@ -1,8 +1,11 @@
+import time
+
 import allure
 import pytest
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from elements.headers_elements import HeaderElement
+from tests.conftest import driver
 
 
 @pytest.fixture
@@ -53,6 +56,7 @@ def test_open__form_create_id(header_element, login_page):
 @allure.title('Test Authorization')
 def test_authorization(main_page, header_element, login_page):
 
+    login_page.click_sing_in_by_login()
     login_page.login_input('vselslav-test.1')
     login_page.click_login()
     login_page.password_input('qap18test')
@@ -72,6 +76,7 @@ def test_using_other_services_by_login(header_element, login_page):
 @allure.title('Test incorrect login')
 def test_entered_incorrect_login(header_element, login_page):
 
+    login_page.click_sing_in_by_login()
     login_page.login_input('Egaedszgaezh')
     login_page.click_login()
     login_page.assert_login_entered_incorrect()
@@ -80,6 +85,7 @@ def test_entered_incorrect_login(header_element, login_page):
 @allure.title('Test login not entered')
 def test_login_not_entered(header_element, login_page):
 
+    login_page.click_sing_in_by_login()
     login_page.click_login()
     login_page.assert_login_not_entered()
 
@@ -87,6 +93,7 @@ def test_login_not_entered(header_element, login_page):
 @allure.title('Test incorrect password')
 def test_entered_incorrect_password(header_element, login_page):
 
+    login_page.click_sing_in_by_login()
     login_page.login_input('vselslav-test.1')
     login_page.click_login()
     login_page.password_input('111111')
@@ -97,6 +104,7 @@ def test_entered_incorrect_password(header_element, login_page):
 @allure.title('Test forgot password')
 def test_forgot_password(header_element, login_page):
 
+    login_page.click_sing_in_by_login()
     login_page.login_input('vselslav-test.1')
     login_page.click_login()
     login_page.assert_forgot_password()
@@ -105,6 +113,7 @@ def test_forgot_password(header_element, login_page):
 @allure.title('Test password not entered')
 def test_password_not_entered(header_element, login_page):
 
+    login_page.click_sing_in_by_login()
     login_page.login_input('vselslav-test.1')
     login_page.click_login()
     login_page.click_password()

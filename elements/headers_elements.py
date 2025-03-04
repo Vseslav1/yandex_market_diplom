@@ -45,50 +45,50 @@ class HeaderElement(BasePage, HeadersLocators):
     def open_delivery(self):
         self.click_mouse(self.DELIVERY)
 
-    @allure.step('Open thematic')
+    @allure.step ('Open thematic')
     def open_thematic(self):
-        self.click_for_index(self.TOP_MENY, 0)
+        self.click_for_index (self.TOP_MENY, 0)
 
-    @allure.step('Open split')
+    @allure.step ('Open split')
     def open_split(self):
-        self.click_for_index(self.TOP_MENY, 1)
+        self.click_for_index (self.TOP_MENY, 1)
 
-    @allure.step('Favorite category')
+    @allure.step ('Favorite category')
     def open_favorite_category(self):
-        self.click_for_index(self.TOP_MENY, 2)
+        self.click_for_index (self.TOP_MENY, 2)
 
-    @allure.step('Open cloth')
+    @allure.step ('Open cloth')
     def open_cloth(self):
-        self.click_for_index(self.TOP_MENY, 3)
+        self.click_for_index (self.TOP_MENY, 3)
 
-    @allure.step('Open home product')
+    @allure.step ('Open home product')
     def open_home_product(self):
-        self.click_for_index(self.TOP_MENY, 4)
+        self.click_for_index (self.TOP_MENY, 4)
 
-    @allure.step('Open child')
+    @allure.step ('Open child')
     def open_child(self):
-        self.click_for_index(self.TOP_MENY, 5)
+        self.click_for_index (self.TOP_MENY, 5)
 
-    @allure.step('Open beauty')
+    @allure.step ('Open beauty')
     def open_beauty(self):
-        self.click_for_index(self.TOP_MENY, 6)
+        self.click_for_index (self.TOP_MENY, 6)
 
-    @allure.step('Open electronic')
+    @allure.step ('Open electronic')
     def open_electronic(self):
-        self.click_for_index(self.TOP_MENY, 7)
+        self.click_for_index (self.TOP_MENY, 7)
 
-    @allure.step('Open ikea')
+    @allure.step ('Open ikea')
     def open_ikea(self):
-        self.click_for_index(self.TOP_MENY, 8)
+        self.click_for_index (self.TOP_MENY, 8)
 
-    @allure.step('Open food product')
+    @allure.step ('Open food product')
     def open_food_product(self):
-        self.click_for_index(self.TOP_MENY, 9)
+        self.click_for_index (self.TOP_MENY, 9)
 
-    @allure.step('Open business')
+    @allure.step ('Open business')
     def open_business(self):
-        self.click(self.MARKET_FOR_BUSINESS)
+        self.click (self.MARKET_FOR_BUSINESS)
 
-    @allure.step('Open sell on market')
+    @allure.step ('Open sell on market')
     def open_sell_on_the_market(self):
-        self.click_for_index(self.TOP_MENY, 26)
+        self.click_for_index (self.TOP_MENY, 26)

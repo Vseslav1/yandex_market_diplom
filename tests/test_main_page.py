@@ -125,7 +125,7 @@ def test_open_login_page(main_page, header_element):
 @allure.title('Test split page open')
 def test_open_split_page(main_page, header_element):
 
-    header_element.open_split()
+    header_element.open_meny_elements(0)
 
     main_page.assert_split_page_open()
 
@@ -133,7 +133,7 @@ def test_open_split_page(main_page, header_element):
 @allure.title('Test cloth page open')
 def test_open_cloth_page(main_page, header_element):
 
-    header_element.open_cloth()
+    header_element.open_meny_elements(3)
 
     main_page.assert_cloth_page_open()
 
@@ -141,7 +141,7 @@ def test_open_cloth_page(main_page, header_element):
 @allure.title('Test product for home page open')
 def test_open_product_for_home(main_page, header_element):
 
-    header_element.open_home_product()
+    header_element.open_meny_elements(4)
 
     main_page.assert_product_home_page_open()
 

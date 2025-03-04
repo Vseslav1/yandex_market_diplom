@@ -16,11 +16,15 @@ class LoginPage(BasePage, LoginLocators, HeadersLocators):
 
     @allure.step('Login input')
     def login_input(self, login):
-        self.fill(self.LOGIN, login)
+        self.fill(self.LOGIN_INPUT, login)
 
     @allure.step('Click login')
     def click_login(self):
         self.click(self.SING_IN)
+
+    @allure.step('Click sing ib by login')
+    def click_sing_in_by_login(self):
+        self.click(self.LOGIN)
 
     @allure.step('Password input')
     def password_input(self, password):
