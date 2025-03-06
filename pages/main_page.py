@@ -30,7 +30,7 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators, URL):
         self.assertions.assert_that_element_is_visible(self.SEARCH_INPUT)
         self.assertions.assert_that_element_is_visible(self.SEARCH_BUTTON)
         self.assertions.assert_that_element_is_visible(self.BASKET)
-        self.assertions.assert_that_element_is_visible(self.PLUS)
+        self.assertions.assert_that_element_is_visible(self.PRIZES)
         self.assertions.assert_that_element_is_visible(self.FAVORITES)
         self.assertions.assert_that_element_is_visible(self.ORDERS)
         self.assertions.assert_that_element_is_visible(self.BUTTON_LOGIN)
@@ -53,27 +53,9 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators, URL):
     def assert_search_filters_visible(self):
         self.assertions.assert_that_element_is_visible(self.FILTERS)
 
-    @allure.step('Assert header search visible')
-    def assert_headers_search_visible(self):
-        self.assertions.assert_that_element_is_visible(self.POPULAR)
-        self.assertions.assert_that_element_is_visible(self.CHEAPER)
-        self.assertions.assert_that_element_is_visible(self.EXPENSIVE)
-        self.assertions.assert_that_element_is_visible(self.RAITING)
-        self.assertions.assert_that_element_is_visible(self.LIST)
-        self.assertions.assert_that_element_is_visible(self.GRID)
-
-    @allure.step('Assert header search clickable')
-    def assert_headers_search_clickable(self):
-        self.assertions.assert_that_element_is_clickable(self.CHEAPER)
-        self.assertions.assert_that_element_is_clickable(self.EXPENSIVE)
-        self.assertions.assert_that_element_is_clickable(self.RAITING)
-        self.assertions.assert_that_element_is_clickable(self.LIST)
-        self.assertions.assert_that_element_is_clickable(self.GRID)
-
     @allure.step('Assert plus page open')
-    def assert_plus_page_open(self):
-        self.switch_window(1)
-        self.assertions.assert_that_page_open(self.YANDEX_PLUS_PAGE)
+    def assert_prize_page_open(self):
+        self.assertions.assert_that_page_open(self.YANDEX_PRIZES_PAGE)
 
     @allure.step('Assert order page open')
     def assert_open_order_page(self):
@@ -116,8 +98,8 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators, URL):
         self.assertions.assert_that_page_open(self.ELECTRONIC_PAGE)
 
     @allure.step('Assert ikea page open')
-    def assert_ikea_open(self):
-        self.assertions.assert_that_element_contains_text(self.IKEA_TEXT, 'ИКЕА')
+    def assert_ultima_page_open(self):
+        self.assertions.assert_that_page_open(self.ULTIMA_PAGE)
 
     @allure.step('Assert food page open')
     def assert_food_page_open(self):
@@ -130,3 +112,6 @@ class MainPage(BasePage, HeadersLocators, MainPageLocators, URL):
     @allure.step('Assert sell on the market page open')
     def assert_sell_on_market_page_open(self):
         self.assertions.assert_that_page_open(self.SELL_PAGE)
+
+    def assert_from_abroad_pafe_open(self):
+        self.assertions.assert_that_page_open(self.FROM_ABROAD)

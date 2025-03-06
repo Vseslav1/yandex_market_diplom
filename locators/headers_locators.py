@@ -9,7 +9,7 @@ class HeadersLocators:
     SEARCH_BUTTON = (By.CSS_SELECTOR, '[data-auto="search-button"]')
     SEARCH_INPUT = (By.CSS_SELECTOR, '[data-auto="search-input"]')
 
-    PLUS = (By.CSS_SELECTOR, '[data-zone-name="yaPlusBadge"]')
+    PRIZES = (By.CSS_SELECTOR, '[class="EQlfk _2h0Ng"]')
 
     ORDERS = (By.XPATH, '//div[@data-baobab-name="orders"]')
 
