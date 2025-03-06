@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 from pages.main_page import MainPage
@@ -39,7 +41,7 @@ def test_catalog(main_page, header_element):
 @allure.title('Test logo')
 def test_logo(main_page, header_element):
 
-    header_element.basket_open()
+    header_element.orders_open()
     header_element.click_logo()
 
     main_page.assert_click_logo_go_to_main_page()
@@ -64,30 +66,13 @@ def test_filters_on_search_page_visible(page_search, header_element):
     page_search.assert_search_filters_visible()
 
 
-@allure.title('Test header search visible')
-def test_header_search_visible(page_search, header_element):
-
-    header_element.execute_search_input('макбук эйр м1')
-    header_element.button_search()
-
-    page_search.assert_headers_search_visible()
-
-
-@allure.title('Test header search clickable')
-def test_header_search_clickable(page_search, header_element):
-
-    header_element.execute_search_input('макбук эйр м1')
-    header_element.button_search()
-
-    page_search.assert_headers_search_clickable()
-
 
 @allure.title('Test page plus open')
-def test_page_plus_open(main_page, header_element):
+def test_page_prize_open(main_page, header_element):
 
     header_element.open_plus()
 
-    main_page.assert_plus_page_open()
+    main_page.assert_prize_page_open()
 
 
 @allure.title('Test order page open')
@@ -122,12 +107,27 @@ def test_open_login_page(main_page, header_element):
     main_page.assert_login_page_open()
 
 
+@allure.title('Test ultima page open')
+def test_open_ultima_page(main_page, header_element):
+    header_element.open_ultima ()
+
+    main_page.assert_ultima_page_open ()
+
+
 @allure.title('Test split page open')
 def test_open_split_page(main_page, header_element):
 
     header_element.open_split()
 
     main_page.assert_split_page_open()
+
+
+@allure.title('Test from abroad page open')
+def test_open_product_from_abroad_page(main_page, header_element):
+
+    header_element.open_from_abroad()
+
+    main_page.assert_from_abroad_pafe_open()
 
 
 @allure.title('Test cloth page open')
@@ -170,12 +170,6 @@ def test_open_electronic_page(main_page, header_element):
     main_page.assert_electronic_page_open()
 
 
-@allure.title('Test ikea page open')
-def test_open_ikea_page(main_page, header_element):
-
-    header_element.open_ikea()
-
-    main_page.assert_ikea_open()
 
 
 @allure.title('Test food page open')

@@ -21,9 +21,9 @@ class HeaderElement(BasePage, HeadersLocators):
     def button_search(self):
         self.click(self.SEARCH_BUTTON)
 
-    @allure.step('Open plus')
+    @allure.step('Open prizes')
     def open_plus(self):
-        self.click(self.PLUS)
+        self.click(self.PRIZES)
 
     @allure.step('Open orders')
     def orders_open(self):
@@ -46,7 +46,7 @@ class HeaderElement(BasePage, HeadersLocators):
         self.click_mouse(self.DELIVERY)
 
     @allure.step('Open thematic')
-    def open_thematic(self):
+    def open_ultima(self):
         self.click_for_index(self.TOP_MENY, 0)
 
     @allure.step('Open split')
@@ -55,35 +55,36 @@ class HeaderElement(BasePage, HeadersLocators):
 
     @allure.step('Favorite category')
     def open_favorite_category(self):
-        self.click_for_index(self.TOP_MENY, 2)
+        self.click_for_index (self.TOP_MENY, 2)
+
+    @allure.step('Open cloth')
+    def open_from_abroad(self):
+        self.click_for_index(self.TOP_MENY, 3)
 
     @allure.step('Open cloth')
     def open_cloth(self):
-        self.click_for_index(self.TOP_MENY, 3)
+        self.click_for_index(self.TOP_MENY, 4)
 
     @allure.step('Open home product')
     def open_home_product(self):
-        self.click_for_index(self.TOP_MENY, 4)
+        self.click_for_index(self.TOP_MENY, 5)
 
     @allure.step('Open child')
     def open_child(self):
-        self.click_for_index(self.TOP_MENY, 5)
-
-    @allure.step('Open beauty')
-    def open_beauty(self):
         self.click_for_index(self.TOP_MENY, 6)
+
+    @allure.step ('Open beauty')
+    def open_beauty(self):
+        self.click_for_index (self.TOP_MENY, 7)
 
     @allure.step('Open electronic')
     def open_electronic(self):
-        self.click_for_index(self.TOP_MENY, 7)
-
-    @allure.step('Open ikea')
-    def open_ikea(self):
         self.click_for_index(self.TOP_MENY, 8)
 
     @allure.step('Open food product')
     def open_food_product(self):
         self.click_for_index(self.TOP_MENY, 9)
+
 
     @allure.step('Open business')
     def open_business(self):

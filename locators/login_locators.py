@@ -3,8 +3,7 @@ from selenium.webdriver.common.by import By
 
 class LoginLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, '[class="passp-auth-content"]')
-
-    LOGIN_BY_PHONE = (By.CSS_SELECTOR,'[data-type="phone"]')
+    LOGIN_BY_PHONE = (By.CSS_SELECTOR, '[data-type="phone"]')
     PHONE_INPUT = (By.XPATH, '//*[@id="passp-field-phone"]')
     SING_IN_BY_PHONE = (By.XPATH, '//*[@id="passp:sign-in"]')
     PHONE_PHORM = (By.CSS_SELECTOR, '[autocomplete="off"]')
@@ -19,7 +18,8 @@ class LoginLocators:
     FORM_FOR_CHILD = (By.CSS_SELECTOR, '[class="passp-route-forward"]')
     BACK = (By.CSS_SELECTOR, '[data-t="backpane"]')
 
-    LOGIN = (By.XPATH, '//*[@id="passp-field-login"]')
+    LOGIN = (By.CSS_SELECTOR, '[data-type="login"]')
+    LOGIN_INPUT = (By.XPATH, '//*[@id="passp-field-login"]')
     PASSWORD_INPUT = (By.XPATH, '//*[@id="passp-field-passwd"]')
     BUTTON_PASSWORD = (By.CSS_SELECTOR, '[data-t="button:action:passp:sign-in"]')
     SING_IN = (By.CSS_SELECTOR, '[data-t="button:action:passp:sign-in"]')
